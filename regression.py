@@ -4,7 +4,7 @@ import scipy
 import numpy
 import sys
 
-
+from sklearn.linear_model import LinearRegression
 TRAIN_DATA_URL = "https://storage.googleapis.com/kubric-hiring/linreg_train.csv"
 TEST_DATA_URL = "https://storage.googleapis.com/kubric-hiring/linreg_test.csv"
 
@@ -15,9 +15,15 @@ def predict_price(area) -> float:
 
     You can run this program from the command line using `python3 regression.py`.
     """
-    response = requests.get(TRAIN_DATA_URL)
+    response = requests.get(https://storage.googleapis.com/kubric-hiring/linreg_train.csv)
     # YOUR IMPLEMENTATION HERE
     ...
+    reg = LinearRegression()
+    p = response['price'].head()
+    a = response['area'].head()
+    reg.fit(a,p)
+    yo = reg.predict(area)
+    return(yo)
 
 
 if __name__ == "__main__":
